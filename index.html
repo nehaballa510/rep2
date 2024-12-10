@@ -3,25 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>invite</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>It's My Birthday!!</h1>
-    <h2>On 5th February</h2>
-    <hr>
-    <img src="https://img.freepik.com/free-vector/colorful-birthday-celebration-illustration_9975-26453.jpg?t=st=1732367856~exp=1732371456~hmac=965ad88706588dbe04bded63b2ec041bad1124e9d6bf0b95432a761f9ae98b96&w=740" alt="birthday pic" width="100" height="80">
-    <h3>What to bring:</h3>
-        <ul>
-            <li>Ballons(to have fun)</li>
-            <li>Cake(it's my fav)</li>
-            <li>Chocolates(cause i love them a lot)</li>
-        </ul>
-    
-    <h3>This is where you need to go:
-        <br>
-        <a href="https://googlemap.com">google map link</a>
-    </h3>
-
-    
+    <p>
+        CREATE A NEW CLASS UNDER SRC/MAIN/TEST AND WRITE  BELOW CODE <br><br>
+import org.openqa.selenium.By; <br>
+import org.openqa.selenium.WebDriver; <br>
+import org.openqa.selenium.chrome.ChromeDriver; <br>
+import org.testng.annotations.Test; <br>
+import io.github.bonigarcia.wdm.WebDriverManager; <br>
+import junit.framework.Assert; <br>
+public class SimpleTest { <br>
+@Test  <br>
+public void simple_Test() <br>
+{ <br>
+WebDriverManager.chromedriver().setup(); <br>
+WebDriver driver= new ChromeDriver(); <br>
+driver.get("http://localhost:8084/mvnregapp"); <br>
+driver.manage().window().maximize(); <br>
+Assert.assertEquals(driver.getTitle(),"REGISTRATION <br>
+EVENT"); <br>
+driver.close(); <br>
+} <br>
+} <br>
+Right click on this file itself and run as TestNG Test. <br><br>
+12.DEVELOP TEST CASES FOR THE ABOVE CONTAINERIZED APPLICATION USING 
+SELENIUM. <br><br>
+CREATE A NEW CLASS UNDER SRC/MAIN/TEST AND WRITE  BELOW CODE <br><br>
+import org.openqa.selenium.By; <br>
+import org.openqa.selenium.WebDriver; <br>
+import org.openqa.selenium.chrome.ChromeDriver; <br>
+import org.testng.annotations.Test; <br>
+import io.github.bonigarcia.wdm.WebDriverManager; <br>
+import junit.framework.Assert; <br>
+public class TC_register { <br>
+@Test  <br>
+public void register_Test() <br>
+{ <br>
+WebDriverManager.chromedriver().setup(); <br>
+WebDriver driver= new ChromeDriver(); <br>
+driver.get("http://localhost:8084/mvnregapp");<br> 
+driver.manage().window().maximize(); <br>
+driver.findElement(By.id("name")).sendKeys("bnnk"); <br>
+driver.findElement(By.id("phone")).sendKeys("76545336<br>
+ "); <br>
+driver.findElement(By.id("email")).sendKeys("nk@gmail<br>
+ .mm"); <br>
+driver.findElement(By.id("btn1")).click(); <br>
+Assert.assertEquals(driver.getTitle(),"REGISTRATION <br>
+EVENT"); <br>
+driver.close(); <br>
+} <br>
+} <br>
+Right click on this file itself and run as TestNG Test.
+    </p>
 </body>
 </html>
